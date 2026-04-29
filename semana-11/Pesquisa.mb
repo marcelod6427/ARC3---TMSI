@@ -1,0 +1,48 @@
+# TMSI - Administração de Redes de Computadores  
+**Marcelo de Lima - Prof.: Gaio Oliveira**
+
+---
+
+## 1. O Papel do SNMP e a Importância da Interoperabilidade
+
+O SNMP (Simple Network Management Protocol) é um protocolo da camada de aplicação do modelo TCP/IP utilizado para monitorar e gerenciar dispositivos em redes IP. Sua principal função é permitir que administradores coletem informações sobre desempenho, status e configuração dos dispositivos de forma remota.  
+
+A interoperabilidade é essencial nesse contexto, pois redes modernas possuem equipamentos de diferentes fabricantes. Como o SNMP é um protocolo padronizado pelo IETF e utiliza comunicação via UDP (portas 161 e 162), ele permite que todos os dispositivos utilizem uma linguagem comum de gerenciamento. Isso garante uma visão unificada da rede e evita a necessidade de múltiplas ferramentas proprietárias.
+
+---
+
+## 2. Evolução e Versões (v1, v2c e v3)
+
+O SNMPv1 foi a primeira versão do protocolo, porém possui baixa segurança, utilizando *community strings* em texto puro. O SNMPv2c trouxe melhorias de desempenho, principalmente com o comando *GetBulk*, que permite coletar grandes volumes de dados com menos requisições. No entanto, manteve as mesmas falhas de segurança.  
+
+O SNMPv3 é a versão mais recomendada atualmente, pois introduz autenticação e criptografia por meio do modelo USM. Isso garante confidencialidade, integridade e autenticação dos dados, tornando-o adequado para ambientes corporativos, mesmo com pequeno impacto no desempenho.
+
+---
+
+## 3. Arquitetura e Funcionamento
+
+O funcionamento do SNMP baseia-se em uma estrutura cliente-servidor (chamada aqui de Gerente-Agente).  
+
+O gerente (NMS) é responsável por monitorar a rede e solicitar informações, enquanto o agente, presente nos dispositivos, coleta e envia esses dados.  
+
+As informações são organizadas na MIB, uma estrutura hierárquica que armazena os dados gerenciáveis. Cada informação possui um identificador único chamado OID, que permite sua localização exata.  
+
+Além das requisições tradicionais, o SNMP também utiliza mensagens *Trap* e *Inform*, que permitem ao agente enviar alertas automaticamente ao gerente em caso de eventos importantes.
+
+---
+
+## 4. Ecossistema de Softwares
+
+Para transformar os dados brutos do SNMP em gráficos e inteligência de rede, utilizamos softwares profissionais de monitoramento. Abaixo, três dos principais do mercado:  
+
+- **Zabbix**: Ferramenta open-source de nível empresarial, amplamente utilizada para monitoramento de redes, servidores e nuvem, com sistema de alertas altamente personalizável.  
+- **PRTG Network Monitor (Paessler)**: Conhecido pela facilidade de uso e interface intuitiva, utiliza sensores para monitoramento rápido e eficiente.  
+- **SolarWinds Network Performance Monitor (NPM)**: Solução corporativa focada em escalabilidade e diagnóstico avançado de falhas em grandes infraestruturas.  
+
+---
+
+## Referências
+
+- KUROSE, James F.; ROSS, Keith W. *Redes de Computadores e a Internet: Uma abordagem top-down*. Pearson.  
+- TANENBAUM, Andrew S.; WETHERALL, David. *Redes de Computadores*. Pearson.  
+- Uso de Inteligência Artificial: Gemini e ChatGPT como apoio na organização, revisão e estruturação do conteúdo.
