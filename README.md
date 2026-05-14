@@ -18,5 +18,5 @@
 Clone o repositório:
 
 ```bash
-git clone https://github.com/DaviP-Conceicao/ARC3.git
+git clone https://github.com/marcelod6427/ARC3---TMSI
 cd ARC3
